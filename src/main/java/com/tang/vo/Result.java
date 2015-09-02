@@ -1,10 +1,15 @@
 package com.tang.vo;
 
 import org.springframework.http.HttpStatus;
-
+/**
+ * 返回结果对象
+ * @author tangthis
+ * <p>https://github.com/tangthis</p>
+ *
+ */
 public class Result {
 	private boolean success = true;
-	private Integer status = HttpStatus.OK.value();
+	private Integer status = ResultStatus.OK.value();
 	private Object data;
 	private String msg = "";
 	public boolean isSuccess() {
