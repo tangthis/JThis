@@ -6,8 +6,9 @@ package com.tang.po;
 import java.util.Date;
 
 /**
- * @author 唐有欢
- * <p>微信：tangcoder</p>
+ * 
+ * @author tangthis
+ * <p>https://github.com/tangthis</p>
  *
  */
 public class TestUser{

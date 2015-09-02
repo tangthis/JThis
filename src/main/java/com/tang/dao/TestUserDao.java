@@ -10,8 +10,9 @@ import org.springframework.stereotype.Repository;
 import com.tang.po.TestUser;
 
 /**
- * @author 唐有欢
- * <p>微信：tangcoder</p>
+ * 
+ * @author tangthis
+ * <p>https://github.com/tangthis</p>
  *
  */
 @Repository
