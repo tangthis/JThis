@@ -6,10 +6,11 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.tang.po.TestUser;
@@ -22,9 +23,8 @@ import com.tang.vo.ResultStatus;
  * <p>https://github.com/tangthis</p>
  *
  */
-@RestController
-//spring4中，为了方便Rest开发，增加@RestController注解，此注解加入了@ResponseBody
-@RequestMapping(value="/user")
+@Controller
+@RequestMapping("/user")
 public class UserController {
 	
 	@Autowired
@@ -32,6 +32,7 @@ public class UserController {
 	
 	
 	@RequestMapping(value="/list")
+	@ResponseBody
 	public Result list(){
 		List<TestUser> data = userService.queryList();
 		Result ret = new Result(ResultStatus.OK.value(),data);
@@ -39,6 +40,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/detail/{id}")
+	@ResponseBody
 	public Result detail(@PathVariable Long id){
 		TestUser data = userService.get(id);
 		Result ret = new Result(ResultStatus.OK.value(), data);
@@ -51,6 +53,7 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMapping(value="/icon")
+	@ResponseBody
 	public Result icon(@RequestParam(value = "file", required = true) MultipartFile file,HttpServletRequest request){
 		String path = request.getSession().getServletContext().getRealPath("upload");  
         String fileName = file.getOriginalFilename();  
