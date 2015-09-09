@@ -5,8 +5,8 @@
 	<artifactId>spring_mybatis_druid_framework</artifactId>
 	<version>1.0</version>
 	<packaging>war</packaging>
-	<name>spring_mybatis_druid_framework</name>
-	<url>http://maven.apache.org</url>
+	<name>spring_mybatis_druid_shiro_framework</name>
+	<url>https://github.com/tangthis</url>
 
 	<build>
 		<pluginManagement>
