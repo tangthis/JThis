@@ -2,7 +2,7 @@ Java Web 开发框架--spring_mybatis_shior_framework
 ------
 
 **spring_mybatis_shior_framework** 是一款通用的Java Web开发框架，使用Spring，Mybatis，Shiro，Druid，FastJson等技术。
-可以以次框架为基础，进行业务开发，无需自己搭建。
+可以以此框架为基础，进行业务开发，无需自己搭建。
 
 #### 基本功能：
 > * 封装了通用的CRUD，减少重复代码
