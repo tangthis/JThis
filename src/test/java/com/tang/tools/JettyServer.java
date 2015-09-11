@@ -5,7 +5,7 @@ import org.mortbay.jetty.webapp.WebAppContext;
 public class JettyServer {
 
 	public static void main(String[] args) throws Exception {
-		Server server = buildNormalServer(8080, "/");
+		Server server = buildNormalServer(8899, "/");
 		server.start();
 	}
 	public static Server buildNormalServer(int port, String contextPath) {

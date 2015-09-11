@@ -1,4 +1,4 @@
-package com.tang.vo;
+package com.tang.web.vo;
 /**
  * 返回状态码枚举
  * @author tangthis
