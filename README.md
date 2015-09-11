@@ -10,9 +10,10 @@ Java Web 开发框架--spring_mybatis_shior_framework
 > * URL支持Restful
 > * Druid实时监控
 > * 通用的权限管理，基于Shiro权限管理
-> * 多文件上传
-> * 前端模块化开发示例
+> * Spring MultiFile多文件上传
 > * FastJson解析
+> * 前端模块化开发示例
+
 
 
 ## If you have a better suggestion,Please share out,Let's do better.
