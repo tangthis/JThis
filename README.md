@@ -4,3 +4,4 @@ Spring mvc 4.0
 Mybatis
 Druid
 FastJson
+shiro
