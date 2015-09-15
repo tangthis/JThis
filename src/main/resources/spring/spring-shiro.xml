@@ -9,18 +9,15 @@
 
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         <property name="securityManager" ref="securityManager"/>
-        <property name="loginUrl" value="/rest/page/login"/>
-        <property name="successUrl" value="/rest/index"/>
-        <property name="unauthorizedUrl" value="/rest/page/401"/>
+        <property name="loginUrl" value="/page/login"/>
+        <property name="unauthorizedUrl" value="/page/401"/>
         <property name="filterChainDefinitions">
             <value>
                 <!-- 静态资源允许访问 -->
                 /app/** = anon
                 /assets/** = anon
                 <!-- 登录页允许访问 -->
-                /rest/user/login = anon
-                <!-- 用户测试 -->
-                /user/** = anon
+                /user/login = anon
                 <!-- 其他资源需要认证 -->
                 /** = authc
             </value>
@@ -54,5 +51,9 @@
 
     <!-- Shiro生命周期处理器 -->
     <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
-
+    
+	<!-- Shiro Spring AOP权限注解 , 需要设置<aop:config proxy-target-class="true"> -->
+	<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">  
+	    <property name="securityManager" ref="securityManager"/>  
+	</bean>
 </beans>

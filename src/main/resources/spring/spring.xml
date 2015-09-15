@@ -21,6 +21,10 @@
 	http://www.springframework.org/schema/cache 
 	http://www.springframework.org/schema/cache/spring-cache.xsd">
 	
+	<!-- 不拦截的资源文件 -->
+	<mvc:resources location="/app/" mapping="/app/**"/> 
+	<mvc:resources location="/assets/" mapping="/assets/**"/> 
+
 	<!-- 注解 -->
 	<context:component-scan base-package="com.tang.web" />
 	
@@ -30,11 +34,17 @@
     </bean>
     
 	<!-- 会自动注册DefaultAnnotationHandlerMapping与AnnotationMethodHandlerAdapter 两个bean,是spring MVC为@Controllers分发请求所必须的 -->
-	<mvc:annotation-driven validator="validator">
+	<mvc:annotation-driven>
 		<!-- 注入json自动转换，使用fastjson -->
 		<mvc:message-converters register-defaults="true">
             <bean id="fastJsonHttpMessageConverter" class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
                 <property name="features" ref="FASTJSON_WRITE_MAP_NULL"/>
+                <property name="supportedMediaTypes"><!-- 解决乱码 -->
+		           <list>  
+		               <value>application/json;charset=UTF-8</value>  
+		               <value>text/html;charset=UTF-8</value>  
+		           </list>  
+       			</property>
             </bean>
         </mvc:message-converters>
 	</mvc:annotation-driven>
@@ -51,21 +61,13 @@
         <property name="basenames">
             <list>
                 <!-- 在web环境中一定要定位到classpath 否则默认到当前web应用下找 -->
-                <value>classpath:messages</value>
+                <value>classpath*:messages.properties</value>
                 <value>classpath:org/hibernate/validator/ValidationMessages</value>
             </list>
         </property>
         <property name="useCodeAsDefaultMessage" value="false"/>
         <property name="defaultEncoding" value="UTF-8"/>
         <property name="cacheSeconds" value="60"/>
-    </bean>
-
-    <mvc:interceptors>
-        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"/>
-    </mvc:interceptors>
-
-    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
-        <property name="defaultLocale" value="zh_CN"/>
     </bean>
     
 	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
@@ -76,4 +78,8 @@
     <!-- 对模型视图添加前后缀 -->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/views/" p:suffix=".jsp"/>
+          
+    
+    <aop:config proxy-target-class="true"></aop:config>
+          
 </beans>

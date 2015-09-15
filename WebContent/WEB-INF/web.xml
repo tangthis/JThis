@@ -6,7 +6,11 @@
 	<!-- 上下文参数配置 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath*:spring/spring*.xml</param-value>
+		<param-value>
+			classpath*:spring/spring-db.xml,
+			classpath*:spring/spring-shiro.xml,
+			classpath*:spring/spring.xml
+		</param-value>
 	</context-param>
 	
 	<!-- 上下文监听 -->
@@ -87,20 +91,20 @@
 	</servlet-mapping>
 	
 	<welcome-file-list>
-		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>/index</welcome-file>
 	</welcome-file-list>
 	
 	 <!-- 错误页 -->
     <error-page>
         <error-code>404</error-code>
-        <location>/rest/page/404</location>
+        <location>/page/404</location>
     </error-page>
     <error-page>
         <error-code>500</error-code>
-        <location>/rest/page/500</location>
+        <location>/page/500</location>
     </error-page>
     <error-page>
         <exception-type>org.apache.shiro.authz.AuthorizationException</exception-type>
-        <location>/rest/page/401</location>
+        <location>/page/401</location>
     </error-page>
 </web-app>
