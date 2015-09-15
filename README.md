@@ -1,4 +1,4 @@
-Java Web 开发框架--JThis
+JThis -- Java Web 开发框架
 ------
 
 **JThis** 是一款通用的Java Web开发框架，使用Spring，Mybatis，Shiro，Druid，FastJson等技术。
