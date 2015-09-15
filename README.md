@@ -1,7 +1,7 @@
-Java Web 开发框架--spring_mybatis_shior_framework
+Java Web 开发框架--JThis
 ------
 
-**spring_mybatis_shior_framework** 是一款通用的Java Web开发框架，使用Spring，Mybatis，Shiro，Druid，FastJson等技术。
+**JThis** 是一款通用的Java Web开发框架，使用Spring，Mybatis，Shiro，Druid，FastJson等技术。
 可以以此框架为基础，进行业务开发，无需自己搭建。
 
 
