@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tang.web.dao.UserDao">
+	<resultMap id="resultUser" type="com.tang.web.po.User">
+		<id column="id" property="id" />
+		<result column="uname" property="uname" />
+		<result column="phone" property="phone" />
+		<result column="birthday" property="birthday" />
+		<result column="pwd" property="pwd" />
+		<result column="status" property="status" typeHandler="com.tang.web.po.enums.StatusHandler" />
+		<result column="create_date" property="createDate" />
+	</resultMap>
+	
+	<sql id="userColumns">
+		id,uname,phone,birthday,pwd,status
+	</sql>
+   
+    <select id="findList" resultMap="resultUser">
+		SELECT <include refid="userColumns"/> FROM user
+  	</select>
+  	
+  	<select id="get" resultMap="resultUser" parameterType="Long">
+  		SELECT <include refid="userColumns"/> FROM test_user where id = #{id} 
+  	</select>
+  	
+  	<!-- 用户登录验证查询 -->
+    <select id="authentication" resultMap="resultUser">
+        select
+        <include refid="userColumns" />
+        from user
+        where uname = #{record.uname} and pwd = #{record.pwd}
+    </select>
+    
+    <select id="queryUsers" resultMap="resultUser">
+    	select 
+    	<include refid="userColumns" />
+    	from user
+    	<trim prefix="where" prefixOverrides="and">
+			<if test="record.id != null and record.id != 0">
+				and id = #{id}
+		    </if>
+			<if test="record.uname != null">
+				and uname = #{record.uname}
+		    </if>
+			<if test="record.pwd != null">
+				and pwd = #{record.pwd}
+		    </if>
+			<if test="record.status != null">
+				and status = #{record.status.type}
+    		</if>
+    	</trim>
+    </select>
+</mapper>
