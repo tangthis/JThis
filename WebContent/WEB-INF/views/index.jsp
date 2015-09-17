@@ -16,7 +16,7 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
     <head>
         <base href="<%=basePath%>">
         <meta charset="utf-8" />
-        <title>Spring_Mybatis_Shiro</title>
+        <title>JThis</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <meta content="" name="description" />
@@ -302,7 +302,7 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
         <!-- BEGIN FOOTER -->
         <div class="footer">
             <div class="footer-inner">
-                2014 &copy; Spring_Mybatis_Shiro By TangThis.<a href="https://github.com/tangthis" target="_blank">Github:https://github.com/tangthis</a>
+                2014 &copy; JThis By TangThis.Github:<a href="https://github.com/tangthis" target="_blank" style="color:orange">https://github.com/tangthis</a>
             </div>
             <div class="footer-tools">
                 <span class="go-top"><i class="fa fa-angle-up"></i></span>
