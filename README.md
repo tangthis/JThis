@@ -15,9 +15,10 @@ JThis -- Java Web开发框架
 > * 前端模块化开发示例
 
 ### 项目截图
-![image](https://github.com/tangthis/JThis/tree/web/WebContent/app/img/login.png)
-![image](https://github.com/tangthis/JThis/tree/web/WebContent/app/img/index.png)
-![image](https://github.com/tangthis/JThis/tree/web/WebContent/app/img/project_struct.png)
+
+![image](https://github.com/tangthis/JThis/blob/web/WebContent/app/img/login.png)
+![image](https://github.com/tangthis/JThis/blob/web/WebContent/app/img/index.png)
+![image](https://github.com/tangthis/JThis/blob/web/WebContent/app/img/project_struct.png)
 
 
 
