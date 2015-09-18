@@ -18,7 +18,6 @@ JThis -- Java Web开发框架
 
 ![image](https://github.com/tangthis/JThis/blob/web/WebContent/app/img/login.png)
 ![image](https://github.com/tangthis/JThis/blob/web/WebContent/app/img/index.png)
-![image](https://github.com/tangthis/JThis/blob/web/WebContent/app/img/project_struct.png)
 
 
 
