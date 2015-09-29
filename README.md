@@ -23,5 +23,8 @@ JThis -- Java Web开发框架
 
 ## If you have a better suggestion,Please share out,Let's do better.
 > Author : tangthis
-> Email : tangthis#163.com
+>
+> Email  : tangthis#163.com
+>
+> Weixin : jerry0914
 
