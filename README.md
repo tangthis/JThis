@@ -25,6 +25,4 @@ JThis -- Java Web开发框架
 > Author : tangthis
 >
 > Email  : tangthis#163.com
->
-> Weixin : jerry0914
 
